@@ -36,3 +36,7 @@
     console.log(trainTime);
     console.log(trainFrequency);
   })
+
+  firebase.database().ref().on("vaue", function(snapshot){
+    $("#display-name").html(snapshot.val().name);
+  })
