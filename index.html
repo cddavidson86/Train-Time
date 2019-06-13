@@ -13,34 +13,36 @@
 
 <div class="container">
 
-    <div class="jumbotron"><h1>Train Times</h1></div>
+    <div class="jumbotron"><h1 class="text-center">Train Times</h1></div>
 
     <!-- THIS IS WHERE THE TRAIN INFORMATION WILL GO WHEN ITS UNDERSTOOD -->
-    <div class="row">
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Train Times Listed</h3>
-                    </div>
-                    <div class="panel-body">
-                        <div class="information-times">
-                            <div class="printing-info">
-                                <h1 class="display-name">1</h1>
-                            </div>
-                            <div class="printing-info">
-                                <h1 class="display-destination">2</h1>
-                            </div>
-                            <div class="printing-info">
-                                <h1 class="display-time">3</h1>
-                            </div>
-                            <div class="printing-info">
-                                <h1 class="display-frenquency">4</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    
+    <div class="row d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col" id="">Train Name</th>
+                            <th scope="col" id="">Destination</th>
+                            <th scope="col" id="">Frequency (min)</th>
+                            <th scope="col" id="">Next Arrival</th>
+                            <th scope="col" id="">Minutes Away</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="col" id="display-name"></td>
+                            <td scope="col" id="display-destination"></td>
+                            <td scope="col" id="display-frenquency"></td>
+                            <td scope="col" id="display-time"></td>
+                            <td scope="col" id="minutes-away"></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+    </div>
 
     <!-- WHERE THE TRAIN INFORMATION WILL BE ENTERED -->
     <div class="row">
@@ -52,20 +54,20 @@
                 <div class="panel-body">
                     <form role="form">
                         <div class="form-group">
-                            <label for="text">Train Name:</label>
+                            <label for="text">Train Name</label>
                             <input type="text" class="form-control" id="train-name">
                         </div>
                         <div class="form-group">
-                            <label for="text">Train destination:</label>
+                            <label for="text">Train Destination</label>
                             <input type="text" class="form-control" id="train-destination">
                         </div>
                         <div class="form-group">
-                            <label for="text">Train Time:</label>
-                            <input type="text" class="form-control" id="train-time">
+                            <label for="text">Train Frequency (min)</label>
+                            <input type="text" class="form-control" id="train-frequency">
                         </div>
                         <div class="form-group">
-                            <label for="text">Train Frequency:</label>
-                            <input type="text" class="form-control" id="train-Frequency">
+                            <label for="text">Train Time (HH:mm) military time</label>
+                            <input type="text" class="form-control" id="train-time">
                         </div>
                         <button type="submit" class="btn btn-default" id="add-train">Submit</button>
                     </form>
@@ -87,5 +89,8 @@
 
   <!-- Script -->
   <script src="assets/javascript/logic.js"></script>
+
+  <!-- MOMENT.JS -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </body>
 </html>
