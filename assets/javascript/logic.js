@@ -40,11 +40,14 @@
     // console.log("inside on.click")
     // console.log("time " +trainName);
     // console.log("Destination " +trainDestination);
-    // console.log("Frenquency " +trainFrequency);
+    console.log("Frenquency " +trainFrequency);
     // console.log("trainFirstTime " +trainFirstTime);
     // console.log("nextArrival " +nextArrival);
     // console.log("minutesAway " +minutesAway);
-
+    $("#train-name").val('');
+    $("#train-destination").val('');
+    $("#train-frequency").val('');
+    $("#train-time").val('');
   })
 
   firebase.database().ref().on("child_added", function(snapshot){
@@ -61,7 +64,7 @@
     // console.log("inside child added")
     // console.log("time " +trainName);
     // console.log("Destination " +trainDestination);
-    // console.log("Frenquency " +trainFrequency);
+    console.log("Frenquency " +trainFrequency);
     // console.log("trainFirstTime " +trainFirstTime);
     // console.log("nextArrival " +nextArrival);
     // console.log("minutesAway " +minutesAway);
@@ -70,7 +73,7 @@
   function workTime() {
 
     // Assumptions
-    var tFrequency = 20;
+    var tFrequency = trainFrequency;
 
     // Time is 3:30 AM
     // var firstTime = "03:30;"
@@ -95,7 +98,6 @@
     var tMinutesTillTrain = tFrequency - tRemainder;
     nextArrival = tMinutesTillTrain;
     console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-
 
     // Next Train
     var nextTrain = moment().add(tMinutesTillTrain, "minutes");
